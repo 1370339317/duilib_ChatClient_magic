@@ -573,10 +573,10 @@ CListContainerElementUI * ChatMainWnd::CreateSessionItem(SessionItem * item)
 {
 	CListContainerElementUI *listElement = NULL;
 	CDialogBuilder dlgBuilder;
-	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("SessionItem.xml"), (UINT)0, NULL, &m_PaintManager));
+	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("SessionItem.xml"), 0, NULL, &m_PaintManager));
 
 	if (listElement == NULL)
-		return false;
+		return 0;
 
 	CButtonUI *headerImg = static_cast<CButtonUI*>(m_PaintManager.FindSubControlByName(listElement, L"HeaderImg"));
 	if (headerImg)
@@ -630,7 +630,7 @@ CListContainerElementUI * ChatMainWnd::CreateFriendItem() // ÐÂµÄÅóÓÑ
 {
 	CListContainerElementUI *listElement = NULL;
 	CDialogBuilder dlgBuilder;
-	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("NewFriend.xml"), (UINT)0, NULL, &m_PaintManager));
+	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("NewFriend.xml"), 0, NULL, &m_PaintManager));
 	listElement->SetTag(-1);
 	return listElement;
 }
@@ -639,7 +639,7 @@ CListContainerElementUI * ChatMainWnd::CreateFrientItem(UserAndFriend * user) //
 {
 	CListContainerElementUI *listElement = NULL;
 	CDialogBuilder dlgBuilder;
-	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("FriendItem.xml"), (UINT)0, NULL, &m_PaintManager));
+	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("FriendItem.xml"), 0, NULL, &m_PaintManager));
 
 	if (listElement == NULL)
 		return NULL;
@@ -667,9 +667,9 @@ CListContainerElementUI * ChatMainWnd::CreateChatMsgItem(ChatMsgItem * item)
 	CListContainerElementUI *listElement = NULL;
 	CDialogBuilder dlgBuilder;
 	if (!item->bMyself)
-		listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("FriendChatIten.xml"), (UINT)0, NULL, &m_PaintManager));
+		listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("FriendChatIten.xml"), 0, NULL, &m_PaintManager));
 	else
-		listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("MyselfChatItem.xml"), (UINT)0, NULL, &m_PaintManager));
+		listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("MyselfChatItem.xml"), 0, NULL, &m_PaintManager));
 	if (listElement == NULL)
 		return NULL;
 
@@ -715,7 +715,7 @@ CListContainerElementUI * ChatMainWnd::CreateNewFriendItem(FriendRequest *reques
 {
 	CListContainerElementUI *listElement = NULL;
 	CDialogBuilder dlgBuilder;
-	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("NewFriendItem.xml"), (UINT)0, NULL, &m_PaintManager));
+	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("NewFriendItem.xml"), 0, NULL, &m_PaintManager));
 
 	if (listElement == NULL)
 		return NULL;
@@ -785,7 +785,7 @@ CListContainerElementUI * ChatMainWnd::CreateFriendDetail(UserAndFriend * user)
 {
 	CListContainerElementUI *listElement = NULL;
 	CDialogBuilder dlgBuilder;
-	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("FriendDetail.xml"), (UINT)0, NULL, &m_PaintManager));
+	listElement = static_cast<CListContainerElementUI*>(dlgBuilder.Create(_T("FriendDetail.xml"), 0, NULL, &m_PaintManager));
 
 	if (listElement == NULL)
 		return NULL;
@@ -820,7 +820,7 @@ CListUI * ChatMainWnd::CreateChatMsgList()
 {
 	CListUI *listElement = NULL;
 	CDialogBuilder dlgBuilder;
-	listElement = static_cast<CListUI*>(dlgBuilder.Create(_T("ChatMsgList.xml"), (UINT)0, NULL, &m_PaintManager));
+	listElement = static_cast<CListUI*>(dlgBuilder.Create(_T("ChatMsgList.xml"), 0, NULL, &m_PaintManager));
 
 	return listElement;
 }
